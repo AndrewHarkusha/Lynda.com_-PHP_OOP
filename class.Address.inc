@@ -23,8 +23,8 @@ class Address {
 	public $country_name;
 	
 	
-	public display(){
-	$output ='';
+	function display() {
+	$output = '';
 	
 	$output .=$this->street_address1;
 	if($this->street_address2){
