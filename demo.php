@@ -9,7 +9,7 @@ echo "<h2>Empty Address</h2>";
 echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>";
 
 echo "<h2>Setting Properties...</h2>";
-$address->street_name1 = '555 Fake Street';
+$address->street_address1 = '555 Fake Street';
 $address->city_name = 'Townsville';
 $address->subdivision_name = 'State';
 $address->postal_code = '12345';
@@ -18,3 +18,7 @@ echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>";
 
 echo '<h2>Display address</h2>';
 $address->display();
+echo "<tt><pre>". var_export($address->display(), TRUE)."</pre></tt>"; 
+
+echo '<h2>Testing protected</h2>';
+echo "Address ID:{$address->_address_id}";

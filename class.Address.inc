@@ -22,6 +22,13 @@ class Address {
 	//Name of the country
 	public $country_name;
 	
+	//Primary key of an address
+	protected $_address_id;
+	
+	//When the record was created and last updated
+	protected $_time_created;
+	protected $_time_updated;
+	
 	
 	function display() {
 	$output = '';
