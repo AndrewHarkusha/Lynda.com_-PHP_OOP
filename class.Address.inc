@@ -17,7 +17,7 @@ class Address {
 	public $subdivision_name;
 	
 	//Postal Code
-	public $postal_code;
+	protected $_postal_code;
 	
 	//Name of the country
 	public $country_name;
@@ -29,6 +29,34 @@ class Address {
 	protected $_time_created;
 	protected $_time_updated;
 	
+	
+	protected function _postal_code_guess(){
+	    return 'LookUP';
+	}
+	
+	function __get($name){
+	    if(!$this->_postal_code){
+		    $this->_postal_code = _postal_code_guess();
+		}
+		
+		$protected_property_name = '_'.$name;
+		if(property_exist($this, $protected_property_name)){
+		    return $this->$protected_property_name;
+		}
+		
+		trigger_error('Undefined property via __get:' . $name);
+		return NULL;
+	}
+	
+	function __set($name, $value){
+	
+	    if ('postal_code'==$name){
+	        $this->name = $value;
+		    return;
+	    }
+		
+		trigger_error('Undefined or unallowed property via __ste():'. $name);
+	}
 	
 	function display() {
 	$output = '';
