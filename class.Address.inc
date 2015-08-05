@@ -34,8 +34,25 @@ class Address {
 	    return 'LookUP';
 	}
 	
-	function __construct(){
+	function __construct($data = array()){
 	    $this->_time_created = time();
+		
+		if(!is_array($data)){
+		    trigger_error('Unable to construct address with a ' . get_class($name));
+		}
+		
+		if (count($data)>0){
+		    foreach($data as $name=>$value){
+			//Special case for protected properties.
+			    if(in_array($name, array(
+				'time_created',
+				'time_updated'
+				))){
+				$name = '_'.$name;
+				}
+			$this->$name = $value;
+			}
+		}
 	}
 	
 	function __get($name){

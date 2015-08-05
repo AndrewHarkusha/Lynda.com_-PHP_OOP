@@ -21,5 +21,15 @@ echo $address->display();
 //echo "<tt><pre>". var_export($address->display(), TRUE)."</pre></tt>"; 
 
 echo '<h2>Testing magic functions __set and __get:</h2>';
-unset($address->_postal_code);
+//unset($address->_postal_code);
 echo $address->display();
+
+echo '<h2>Testing Address __construct with an array:</h2>';
+$address_2 = new Address(array(
+    'street_address1' => '123 Phony Ave',
+	'city_name' => 'Villageland',
+	'subdivision_name' => 'Region',
+	'_postal_code' => '67890',
+	'country_name' => 'Canada',
+	));
+echo $address_2->display();
