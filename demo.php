@@ -12,13 +12,14 @@ echo "<h2>Setting Properties...</h2>";
 $address->street_address1 = '555 Fake Street';
 $address->city_name = 'Townsville';
 $address->subdivision_name = 'State';
-$address->postal_code = '12345';
+$address->_postal_code = '12345';
 $address->country_name = 'United States of America';
 echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>"; 
 
 echo '<h2>Display address</h2>';
-$address->display();
-echo "<tt><pre>". var_export($address->display(), TRUE)."</pre></tt>"; 
+echo $address->display();
+//echo "<tt><pre>". var_export($address->display(), TRUE)."</pre></tt>"; 
 
-echo '<h2>Testing protected</h2>';
-echo "Address ID:{$address->_address_id}";
+echo '<h2>Testing magic functions __set and __get:</h2>';
+unset($address->_postal_code);
+echo $address->display();

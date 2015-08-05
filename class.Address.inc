@@ -34,6 +34,10 @@ class Address {
 	    return 'LookUP';
 	}
 	
+	function __construct(){
+	    $this->_time_created = time();
+	}
+	
 	function __get($name){
 	    if(!$this->_postal_code){
 		    $this->_postal_code = _postal_code_guess();
@@ -44,18 +48,18 @@ class Address {
 		    return $this->$protected_property_name;
 		}
 		
-		trigger_error('Undefined property via __get:' . $name);
+		trigger_error('Undefined property via __get():' . $name);
 		return NULL;
 	}
 	
 	function __set($name, $value){
 	
-	    if ('postal_code'==$name){
-	        $this->name = $value;
+	    if ('_postal_code'==$name){
+	        $this->$name = $value;
 		    return;
 	    }
 		
-		trigger_error('Undefined or unallowed property via __ste():'. $name);
+		trigger_error('Undefined or unallowed property via __set():'. $name);
 	}
 	
 	function display() {
@@ -68,7 +72,7 @@ class Address {
 	
 	//City, subdivision, postal
 	$output .= '<br/>';
-	$output .= $this->city_name . ',' . $this->subdivision_name . ' ' . $this->postal_code;
+	$output .= $this->city_name . ',' . $this->subdivision_name . ' ' . $this->_postal_code;
 	
 	//Country
 	$output .= '<br/>';
