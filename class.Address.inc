@@ -79,6 +79,14 @@ class Address {
 		trigger_error('Undefined or unallowed property via __set():'. $name);
 	}
 	
+	/**
+     * Magic __toString.
+     * @return string
+     */
+	function __toString(){
+	    return $this->display();
+	}
+	
 	function display() {
 	$output = '';
 	
