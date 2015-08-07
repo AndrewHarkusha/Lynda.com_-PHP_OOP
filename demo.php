@@ -18,7 +18,6 @@ echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>";
 
 echo '<h2>Display address</h2>';
 echo $address->display();
-//echo "<tt><pre>". var_export($address->display(), TRUE)."</pre></tt>"; 
 
 echo '<h2>Testing magic functions __set and __get:</h2>';
 //unset($address->_postal_code);
@@ -36,3 +35,6 @@ echo $address_2->display();
 
 echo '<h2>Address __toString</h2>';
 echo $address_2;
+
+echo '<h2>Displaying address types...</h2>';
+echo "<tt><pre>". var_export($address->valid_address_types, TRUE)."</pre></tt>"; 
