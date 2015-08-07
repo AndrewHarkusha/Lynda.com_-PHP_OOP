@@ -10,7 +10,7 @@ class Address {
 	1 => 'Residence',
 	2 => 'Buisness',
 	3 => 'Park',
-	)
+	);
 
     //Street Address
     public $street_address1;
