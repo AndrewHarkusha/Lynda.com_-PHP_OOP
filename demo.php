@@ -13,6 +13,7 @@ $address->street_address1 = '555 Fake Street';
 $address->city_name = 'Townsville';
 $address->subdivision_name = 'State';
 $address->_postal_code = '12345';
+$address->_address_type_id = 1;
 $address->country_name = 'United States of America';
 echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>"; 
 
