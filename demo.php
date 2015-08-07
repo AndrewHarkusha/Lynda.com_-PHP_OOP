@@ -38,3 +38,10 @@ echo $address_2;
 
 echo '<h2>Displaying address types...</h2>';
 echo "<tt><pre>". var_export(Address::$valid_address_types, TRUE)."</pre></tt>"; 
+
+echo '<h2>Testing address type ID validation.</h2>';
+for ($id = 0; $id<=4; $id++){
+	echo "<div>$id: ";
+	echo Address::isValidAddressTypeId($id) ? 'Valid' : 'Invalid';
+	echo '</div>';
+}

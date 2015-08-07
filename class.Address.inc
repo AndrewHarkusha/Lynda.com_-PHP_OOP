@@ -115,4 +115,13 @@ class Address {
 	
 	return $output;
 	}
+	
+	/**
+	 * Determine if an address type is valid.
+	 * @param int $address_type_id
+	 * @return boolean
+	 */
+	static public function isValidAddressTypeId($address_type_id){
+	    return array_key_exists($address_type_id, self::$valid_address_types);
+	}
 }
