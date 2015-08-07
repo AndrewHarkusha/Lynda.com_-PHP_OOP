@@ -6,6 +6,12 @@
  */
 class Address {
 
+    static public $valid_address_types = array(
+	1 => 'Residence',
+	2 => 'Buisness',
+	3 => 'Park',
+	)
+
     //Street Address
     public $street_address1;
 	public $street_address2;
