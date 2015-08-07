@@ -23,4 +23,11 @@ class Darabase {
 		    trigger_error('Failed tp connect to MySQL:', mysql_connection_error(), E_USER_ERROR);
 		}
 	}
+	
+	private function __clone(){
+	}
+	
+	public function getConnection(){
+	    return $this->_connection;
+	}
 }
