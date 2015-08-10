@@ -48,3 +48,14 @@ for ($id = 0; $id<=4; $id++){
 	echo Address::isValidAddressTypeId($id) ? 'Valid' : 'Invalid';
 	echo '</div>';
 }
+
+echo '<h2>Instantiating AddressPark:</h2>';
+$address_park = new AddressPark(array(
+    'street_address1' => '789 Missing Circle',
+	'street_address2' => 'Suite 0',
+	'city_name' => 'Hemlet',
+	'subdivision_name' => 'Territory',
+	));
+	
+echo $address_park;
+echo "<tt><pre>". var_export($address_park, TRUE)."</pre></tt>"; 
