@@ -66,3 +66,15 @@ $address_park_clone = clone $address_park;
 echo "<tt><pre>". var_export($address_park_clone, TRUE)."</pre></tt>"; 
 echo '$address_park_clone is '. ($address_park_clone == $address_park ?
 '' : 'not').' a copy of $address_park';
+
+$address_business_copy = &$address_business;
+echo '<br/>$address_business_copy is '. ($address_business_copy == $address_business ?
+'' : 'not').' a copy of $address_business';
+
+echo '<h2>Setting $address_business as a new AddressPark:</h2>';
+echo '<br/>$address_business_copy is '. ($address_business_copy == $address_business ?
+'' : 'not').' a copy of $address_business';
+$address_business = new AddressPark();
+echo '<br/>$address_business is class '. get_class($address_business);
+echo '<br/>$address_business_copy is '. ($address_business_copy instanceof
+AddressBusiness ? '' : 'not').' an Address Business.';
