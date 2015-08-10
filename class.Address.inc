@@ -4,7 +4,7 @@
  * Physical Address
  *
  */
-abstract class Address {
+abstract class Address implements Model{
 
     const ADDRESS_TYPE_RESIDENCE = 1;
 	const ADDRESS_TYPE_BUSINESS = 2;
@@ -141,4 +141,8 @@ abstract class Address {
 		    $this->_address_type_id = $address_type_id;
 		}
 	}
+	
+	final static function load($address_id){}
+	
+	final function save(){}
 }
