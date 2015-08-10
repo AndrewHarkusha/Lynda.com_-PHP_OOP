@@ -4,13 +4,13 @@
  * MySQLi Database; only one connection is allowed.
  *
  */
-class Darabase {
+class Database {
     private $_connection;
 	//Store the single instance.
 	private static $_instance;
 	
 	public static function getInstance(){
-	    if(!self:$_instance){
+	    if(!self::$_instance){
 		    self::$_instance = new self();
 		}
 		return  self::$_instance;

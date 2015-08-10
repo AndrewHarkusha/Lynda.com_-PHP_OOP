@@ -43,9 +43,6 @@ class Address {
 	protected $_time_updated;
 	
 	
-	protected function _postal_code_guess(){
-	    return 'LookUP';
-	}
 	
 	function __construct($data = array()){
 	    $this->_time_created = time();
@@ -103,6 +100,11 @@ class Address {
      */
 	function __toString(){
 	    return $this->display();
+	}
+	
+	protected function _postal_code_guess(){
+	    $db = Database::getInstance();
+		$mysqli = $db->getConnection();
 	}
 	
 	function display() {

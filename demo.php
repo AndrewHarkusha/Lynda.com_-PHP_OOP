@@ -1,6 +1,8 @@
 <?php
 
-require 'class.Address.inc';
+function __autoload($class_name){
+	include 'class_'.$class_name.'.inc';
+}
 
 echo "<h2>Instantiating Address</h2>";
 $address = new Address;
