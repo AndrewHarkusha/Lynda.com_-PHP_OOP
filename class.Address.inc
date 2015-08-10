@@ -4,7 +4,7 @@
  * Physical Address
  *
  */
-class Address {
+abstract class Address {
 
     const ADDRESS_TYPE_RESIDENCE = 1;
 	const ADDRESS_TYPE_BUSINESS = 2;
@@ -45,6 +45,7 @@ class Address {
 	
 	
 	function __construct($data = array()){
+	    $this->_init();
 	    $this->_time_created = time();
 		
 		if(!is_array($data)){
@@ -81,11 +82,6 @@ class Address {
 	
 	function __set($name, $value){
 	
-		if ('_address_type_id'==$name){
-	        $this->_setAddressTypeId($value);
-		    return;
-	    }
-	
 	    if ('_postal_code'==$name){
 	        $this->$name = $value;
 		    return;
@@ -101,6 +97,11 @@ class Address {
 	function __toString(){
 	    return $this->display();
 	}
+	
+	/**
+	 * Force extended classes to implement init method.
+	 */	
+	abstract protected function _init();
 	
 	protected function _postal_code_guess(){
 	    $db = Database::getInstance();
