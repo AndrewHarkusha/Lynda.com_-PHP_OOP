@@ -55,6 +55,7 @@ $address_park = new AddressPark(array(
 	'street_address2' => 'Suite 0',
 	'city_name' => 'Hemlet',
 	'subdivision_name' => 'Territory',
+	'country_name' => 'Australia',
 	));
 	
 echo $address_park;

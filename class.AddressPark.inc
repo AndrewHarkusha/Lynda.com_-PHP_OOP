@@ -5,8 +5,13 @@
  */
 class AddressPark extends Address {
 
-    public $country_name = 'Australia';
-
+    public function display(){
+	
+	$output = '<div style="background-color:PaleGreen">';
+	$output .= parent::display();
+	$output .= '</div>';
+	return $output;
+	}
     /**
      * Initialization.
      */
