@@ -4,8 +4,8 @@ function __autoload($class_name){
 	include 'class_'.$class_name.'.inc';
 }
 
-echo "<h2>Instantiating Address</h2>";
-$address = new Address;
+echo "<h2>Instantiating Residence Address</h2>";
+$address = new AddressResidence;
 
 echo "<h2>Empty Address</h2>";
 echo "<tt><pre>". var_export($address, TRUE)."</pre></tt>";
