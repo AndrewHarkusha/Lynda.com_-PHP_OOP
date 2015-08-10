@@ -1,7 +1,7 @@
 <?php
 
 function __autoload($class_name){
-	include 'class_'.$class_name.'.inc';
+	include 'class.'.$class_name.'.inc';
 }
 
 echo "<h2>Instantiating Residence Address</h2>";
